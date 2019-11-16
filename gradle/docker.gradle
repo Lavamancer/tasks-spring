@@ -1,0 +1,20 @@
+task buildDocker(dependsOn: 'build') {
+    doLast {
+
+        exec {
+            commandLine 'docker', 'build', '-f', 'gradle/Dockerfile', '-t', 'tasks', 'build/libs/'
+        }
+
+        def springProfile = 'SPRING_PROFILES_ACTIVE=' + String.valueOf(profile)
+
+        exec {
+            commandLine 'docker', 'run', '-d',
+                    '--name', 'tasks',
+                    '--network', 'tasks',
+                    '-p', '8085:8080',
+                    '--restart', 'always',
+                    '-e', springProfile, 'tasks'
+        }
+
+    }
+}

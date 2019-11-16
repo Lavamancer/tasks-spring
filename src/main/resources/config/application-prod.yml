@@ -1,0 +1,5 @@
+spring:
+    datasource:
+        url: jdbc:mysql://tasksdb:3310/tasksdb
+        username: root
+        password: 34jk2SNP

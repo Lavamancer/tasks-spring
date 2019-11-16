@@ -30,6 +30,12 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
+    // jackson
+//    compile "joda-time:joda-time:2.9.9"
+//    compile "org.jadira.usertype:usertype.core:7.0.0.CR1"
+//    compile "com.fasterxml.jackson.datatype:jackson-datatype-joda:2.9.3"
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:2.9.3"
+
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }

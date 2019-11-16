@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+rm -rf /root/tasks/project
+git clone -b master /root/tasks/git /root/tasks/project
+
+docker stop tasks
+docker rm tasks
+docker rmi tasks
+
+bash -x gradlew buildDocker --no-daemon --stacktrace -Dprod -Pprofile=prod -x test
