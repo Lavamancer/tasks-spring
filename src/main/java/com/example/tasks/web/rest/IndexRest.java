@@ -13,4 +13,5 @@ public class IndexRest {
     public ResponseEntity<String> getIndex() {
         return ResponseEntity.status(HttpStatus.OK).body("Hello Tasks");
     }
+
 }

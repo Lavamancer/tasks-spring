@@ -1,25 +1,26 @@
 package com.example.tasks.domain;
 
 import lombok.Data;
-import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.io.Serializable;
+import javax.persistence.ManyToOne;
+import java.time.ZonedDateTime;
 
 @Entity
 @Data
-@ToString(of = {"id", "title"})
-public class Task implements Serializable {
+public class Token {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    private String title;
+    private String uuid;
 
-    private String description;
+    @ManyToOne
+    private User user;
+
+    private ZonedDateTime timestamp;
 
 }

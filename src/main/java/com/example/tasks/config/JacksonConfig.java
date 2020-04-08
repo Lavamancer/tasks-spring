@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class JacksonConfig {
 
+
     @Bean
     public Hibernate5Module hibernate5Module() {
         Hibernate5Module hibernate5Module = new Hibernate5Module();

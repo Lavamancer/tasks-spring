@@ -12,7 +12,7 @@ public class Log implements Serializable {
     public enum Type { INFO, ERROR }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
 
     private String message;
